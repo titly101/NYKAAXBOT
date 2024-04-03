@@ -6,11 +6,11 @@ from pyrogram import filters
 SPAM_CHATS = []
 
 
-@app.on_message(filters.command(["mantion"]) | filters.command("@utag", "") & filters.group)
+@app.on_message(filters.command(["utag"]) | filters.command("@utag", "") & filters.group)
 async def tag_all_users(_,message): 
     replied = message.reply_to_message  
     if len(message.command) < 2 and not replied:
-        await message.reply_text("**ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ ᴛᴀɢ ᴀʟʟ**") 
+        await message.reply_text("**✦ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ ᴛᴀɢ ᴀʟʟ**") 
         return                  
     if replied:
         SPAM_CHATS.append(message.chat.id)      
@@ -20,7 +20,7 @@ async def tag_all_users(_,message):
             if message.chat.id not in SPAM_CHATS:
                 break       
             usernum += 3
-            usertxt += f"\n⚘ [{m.user.first_name}](tg://user?id={m.user.id})\n"
+            usertxt += f"\n❅ [{m.user.first_name}](tg://user?id={m.user.id})\n"
             if usernum == 1:
                 await replied.reply_text(usertxt)
                 await asyncio.sleep(2)
@@ -51,7 +51,7 @@ async def tag_all_users(_,message):
         except Exception:
             pass        
            
-@app.on_message(filters.command("mantionoff", "utagstop") & ~filters.private)
+@app.on_message(filters.command("ustop", "utagstop") & ~filters.private)
 async def cancelcmd(_, message):
     chat_id = message.chat.id
     if chat_id in SPAM_CHATS:
@@ -59,10 +59,10 @@ async def cancelcmd(_, message):
             SPAM_CHATS.remove(chat_id)
         except Exception:
             pass   
-        return await message.reply_text("**ᴛᴀɢ ᴀʟʟ sᴜᴄᴄᴇssғᴜʟʟʏ sᴛᴏᴘᴘᴇᴅ!**")     
+        return await message.reply_text("**♥︎ ᴜsᴇʀ ᴍᴇssᴀɢᴇ ᴛᴀɢ sᴛᴏᴘᴘᴇᴅ.**")     
                                      
     else :
-        await message.reply_text("**ɴᴏ ᴘʀᴏᴄᴇss ᴏɴɢᴏɪɴɢ!**")  
+        await message.reply_text("**✦ ɴᴏ ᴘʀᴏᴄᴇss ᴏɴɢᴏɪɴɢ.**")  
         return       
 
 
