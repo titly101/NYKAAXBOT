@@ -11,7 +11,7 @@ EVAA = [
     ],
 ]
 
-@app.on_message(filters.command("population"))
+@app.on_message(filters.command("pop"))
 def country_command_handler(client: Client, message: Message):
     # Extract the country code from the command
     country_code = message.text.split(maxsplit=1)[1].strip()
@@ -31,11 +31,11 @@ def country_command_handler(client: Client, message: Message):
             population = country_info[0].get("population", "N/A")
 
             response_text = (
-                f"✦ ᴄᴏᴜɴᴛʀʏ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ✦\n\n"
-                f"๏ ɴᴀᴍᴇ ➠ {country_name}\n"
-                f"๏ ᴄᴀᴘɪᴛᴀʟ ➠ {capital}\n"
-                f"๏ ᴘᴏᴘᴜʟᴀᴛɪᴏɴ ➠ {population}\n\n"
-                f"๏ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➠ ๛ɴ ʏ ᴋ ᴀ ᴀ࿐"
+                f"❖ ᴄᴏᴜɴᴛʀʏ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ❖\n\n"
+                f"● ɴᴀᴍᴇ ➥ {country_name}\n"
+                f"● ᴄᴀᴘɪᴛᴀʟ ➥ {capital}\n"
+                f"● ᴘᴏᴘᴜʟᴀᴛɪᴏɴ ➥ {population}\n\n"
+                f"❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ ๛ɴ ʏ ᴋ ᴀ ᴀ࿐"
             )
         else:
             response_text = "✦ Error fetching country information from the API."
