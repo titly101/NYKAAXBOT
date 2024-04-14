@@ -15,7 +15,7 @@ pycountry
 heroku3
 apscheduler
 motor==3.4.0
-pillow==9.5.0
+pillow==10.3.0
 psutil
 wget
 pyfiglet
@@ -23,7 +23,7 @@ qrcode
 pytz
 future==0.18.3
 search_engine_parser
-py-tgcalls==0.9.7
+py-tgcalls==1.2.9
 pykeyboard
 pyshorteners
 pyrogram==2.0.106
@@ -36,7 +36,7 @@ spotipy
 tgcrypto
 telegraph
 unidecode
-yt-dlp==2024.4.9
+yt-dlp
 youtube-search
 youtube-search-python
 gtts
