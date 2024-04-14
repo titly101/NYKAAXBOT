@@ -116,7 +116,7 @@ async def sticker_id(app: app, msg):
 ❖ **sᴛɪᴄᴋᴇʀ ɪɴғᴏ** ❖
 
 **● sᴛɪᴄᴋᴇʀ ɪᴅ **➥ `{st_in.file_id}`\n
-**● sᴛɪᴄᴋᴇʀ ᴜɴɪǫᴜᴇ ɪᴅ **➥ `{st_in.file_unique_id}` """, reply_markup=InlineKeyboardMarkup(EVAA),))
+**● sᴛɪᴄᴋᴇʀ ᴜɴɪǫᴜᴇ ɪᴅ **➥ `{st_in.file_unique_id}`""", reply_markup=InlineKeyboardMarkup(EVAA),)
 
 
 #####
