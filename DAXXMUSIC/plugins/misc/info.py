@@ -64,16 +64,14 @@ font_path = "DAXXMUSIC/assets/hiroko.ttf"
 
 INFO_TEXT = """
 ㅤ✦ ᴜsᴇʀ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ✦
-❅─────✧❅✦❅✧─────❅
   
-๏ ᴜsᴇʀ ɪᴅ ➠ `{}`
-๏ ᴜsᴇʀɴᴀᴍᴇ ➠ @{}
-๏ ᴍᴇɴᴛɪᴏɴ ➠ {}
-๏ ᴜsᴇʀ sᴛᴀᴛᴜs ➠ `{}`
-๏ ᴜsᴇʀ ᴅᴄ ɪᴅ ➠ {}
-๏ ᴜsᴇʀ ʙɪᴏ ➠ {}
+● ᴜsᴇʀ ɪᴅ ➥ `{}`
+● ᴜsᴇʀɴᴀᴍᴇ ➥ `@{}`
+● ᴍᴇɴᴛɪᴏɴ ➥ `{}`
+● ᴜsᴇʀ sᴛᴀᴛᴜs ➥ `{}`
+● ᴜsᴇʀ ᴅᴄ ɪᴅ ➥ `{}`
 
-๏ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➠ [๛ɴ ʏ ᴋ ᴀ ᴀ࿐](https://t.me/nykaaxbot)
+❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ [๛ɴ ʏ ᴋ ᴀ ᴀ࿐](https://t.me/nykaaxbot)
 """
 
 # --------------------------------------------------------------------------------- #
@@ -123,7 +121,7 @@ async def userinfo(_, message):
                 profile_path=photo,
             )
             await app.send_photo(chat_id, photo=welcome_photo, caption=INFO_TEXT.format(
-                id, username, mention, status, dc_id, bio), reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(EVAA),)
+                id, username, mention, status, dc_id), reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(EVAA),)
         except Exception as e:
             await message.reply_text(str(e))        
       
@@ -146,7 +144,7 @@ async def userinfo(_, message):
                 profile_path=photo,
             )
             await app.send_photo(chat_id, photo=welcome_photo, caption=INFO_TEXT.format(
-                id, username, mention, status, dc_id, bio), reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(EVAA),)
+                id, username, mention, status, dc_id), reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(EVAA),)
         except Exception as e:
             await message.reply_text(str(e))
 
@@ -171,7 +169,7 @@ async def userinfo(_, message):
                 profile_path=photo,
             )
             await app.send_photo(chat_id, photo=welcome_photo, caption=INFO_TEXT.format(
-                id, username, mention, status, dc_id, bio), reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(EVAA),)
+                id, username, mention, status, dc_id), reply_to_message_id=message.id, reply_markup=InlineKeyboardMarkup(EVAA),)
         except Exception as e:
             await message.reply_text(str(e))
 
