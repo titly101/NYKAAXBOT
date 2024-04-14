@@ -1,6 +1,7 @@
 aiofiles
+bard
 pornhub-api==0.3.0
-aiohttp==3.9.4
+aiohttp==3.9.3
 asyncio==3.4.3
 beautifulsoup4
 blackpink 
@@ -9,7 +10,6 @@ dnspython
 ffmpeg-python
 gitpython
 hachoir
-httpx==0.25.0
 Faker
 pydub
 pycountry
@@ -24,7 +24,7 @@ qrcode
 pytz
 future==0.18.3
 search_engine_parser
-py-tgcalls==1.2.9
+py-tgcalls==0.9.7
 pykeyboard
 pyshorteners
 pyrogram==2.0.106
@@ -37,16 +37,17 @@ spotipy
 tgcrypto
 telegraph
 unidecode
-yt-dlp
+yt-dlp==2024.4.9
 youtube-search
 youtube-search-python
 gtts
 git+https://github.com/AsmSafone/SafoneAPI
 lexica-api==1.5.7
+httpx==0.27.0
 gpytranslate
 openai==1.17.1
 pickledb
-python-telegram-bot==20.7
+python-telegram-bot==21.1
 async_pymongo
 cloudscraper
 pycryptodome
