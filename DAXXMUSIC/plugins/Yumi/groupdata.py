@@ -5,6 +5,13 @@ from pyrogram import Client, filters
 from pyrogram import enums, filters
 
 from DAXXMUSIC import app
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
+EVAA = [
+    [
+        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/nykaaxbot?startgroup=true"),
+    ],
+]
 
 @app.on_message(~filters.private & filters.command(["groupdata"]), group=2)
 async def instatus(app, message):
@@ -15,7 +22,7 @@ async def instatus(app, message):
         enums.ChatMemberStatus.ADMINISTRATOR,
         enums.ChatMemberStatus.OWNER,
     ):
-        sent_message = await message.reply_text("✦ ɢᴇᴛᴛɪɴɢ ɪɴғᴏʀᴍᴀᴛɪᴏɴ...")
+        sent_message = await message.reply_text("💥")
         deleted_acc = 0
         premium_acc = 0
         banned = 0
@@ -36,19 +43,17 @@ async def instatus(app, message):
         end_time = time.perf_counter()
         timelog = "{:.2f}".format(end_time - start_time)
         await sent_message.edit(f"""
-**❅─────✧❅✦❅✧─────❅
+**❖ ɴᴀᴍᴇ ➥ {message.chat.title} 
 
-๏ ɴᴀᴍᴇ ➠ {message.chat.title} 
-๏ ᴍᴇᴍʙᴇʀs ➠ [ {count} ] 
-๏ ʙᴏᴛs ➠ {bot} 
-๏ ᴢᴏᴍʙɪᴇs ➠ {deleted_acc} 
-๏ ʙᴀɴɴᴇᴅ ➠ {banned} 
-๏ ᴘʀᴇᴍɪᴜᴍ ᴜsᴇʀs ➠ {premium_acc} 
-๏ ᴛɪᴍᴇ ᴛᴀᴋᴇɴ ➠ {timelog} 
+● ᴍᴇᴍʙᴇʀs ➥ [ {count} ] 
+● ʙᴏᴛs ➥ {bot} 
+● ᴢᴏᴍʙɪᴇs ➥ {deleted_acc} 
+● ʙᴀɴɴᴇᴅ ➥ {banned} 
+● ᴘʀᴇᴍɪᴜᴍ ᴜsᴇʀs ➥ {premium_acc} 
+● ᴛɪᴍᴇ ᴛᴀᴋᴇɴ ➥ {timelog} 
 
-๏ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➠ ๛ɴ ʏ ᴋ ᴀ ᴀ࿐ **""")
+❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ ๛ɴ ʏ ᴋ ᴀ ᴀ ࿐  **""", reply_markup=InlineKeyboardMarkup(EVAA),)
     else:
         sent_message = await message.reply_text("✦ ONLY ADMINS CAN USE THIS !")
         await sleep(5)
         await sent_message.delete()
-
