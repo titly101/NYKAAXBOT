@@ -2,6 +2,15 @@ from pyrogram import Client, filters
 import requests
 import random
 from DAXXMUSIC import app
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
+
+EVAA = [
+    [
+        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/avishaxbot?startgroup=true"),
+    ],
+]
+
 
 # Truth or Dare API URLs
 truth_api_url = "https://api.truthordarebot.xyz/v1/truth"
@@ -15,7 +24,7 @@ def get_truth(client, message):
         response = requests.get(truth_api_url)
         if response.status_code == 200:
             truth_question = response.json()["question"]
-            message.reply_text(f"✦ ᴛʀᴜᴛʜ ǫᴜᴇsᴛɪᴏɴ ⏤͟͟͞͞★\n\n♥︎ {truth_question}")
+            message.reply_text(f"✦ ᴛʀᴜᴛʜ ǫᴜᴇsᴛɪᴏɴ ⏤͟͟͞͞★\n\n♥︎ {truth_question}", reply_markup=InlineKeyboardMarkup(EVAA),)
         else:
             message.reply_text("✦ Failed to fetch a truth question. Please try again later.")
     except Exception as e:
@@ -28,7 +37,7 @@ def get_dare(client, message):
         response = requests.get(dare_api_url)
         if response.status_code == 200:
             dare_question = response.json()["question"]
-            message.reply_text(f"✦ ᴅᴀʀᴇ ǫᴜᴇsᴛɪᴏɴ ⏤͟͟͞͞★\n\n♥︎ {dare_question}")
+            message.reply_text(f"✦ ᴅᴀʀᴇ ǫᴜᴇsᴛɪᴏɴ ⏤͟͟͞͞★\n\n♥︎ {dare_question}", reply_markup=InlineKeyboardMarkup(EVAA),)
         else:
             message.reply_text("✦ Failed to fetch a dare question. Please try again later.")
     except Exception as e:
