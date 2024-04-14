@@ -9,6 +9,11 @@ import pyrogram
 from uuid import uuid4
 from pyrogram.types import InlineKeyboardButton,InlineKeyboardMarkup
 
+EVAA = [
+    [
+        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/avishaxbot?startgroup=true"),
+    ],
+]
 
 @app.on_message(filters.reply & filters.command("upscale"))
 async def upscale_image(client, message):
@@ -94,7 +99,7 @@ async def _packkang(app :app,message):
                 stickers=sticks,
             )
         )
-        await txt.edit(f"**๏ ʜᴇʀᴇ ɪs ʏᴏᴜʀ ᴋᴀɴɢᴇᴅ ʟɪɴᴋ**!\n**๏ ᴛᴏᴛᴀʟ sᴛɪᴄᴋᴇʀ **➠ {len(sticks)}",reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("ᴘᴀᴄᴋ ʟɪɴᴋ",url=f"http://t.me/addstickers/{short_name}")]]))
+        await txt.edit(f"**❖ ʜᴇʀᴇ ɪs ʏᴏᴜʀ ᴋᴀɴɢᴇᴅ ʟɪɴᴋ**!\n**● ᴛᴏᴛᴀʟ sᴛɪᴄᴋᴇʀ **➥ {len(sticks)}",reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton("ᴘᴀᴄᴋ ʟɪɴᴋ",url=f"http://t.me/addstickers/{short_name}")]]))
     except Exception as e:
         await message.reply(str(e))
 
@@ -108,11 +113,10 @@ async def sticker_id(app: app, msg):
         await msg.reply_text("✦ Reply to a sticker")        
     st_in = msg.reply_to_message.sticker
     await msg.reply_text(f"""
-❀ <u>**sᴛɪᴄᴋᴇʀ ɪɴғᴏ**</u> ❀
+❖ **sᴛɪᴄᴋᴇʀ ɪɴғᴏ** ❖
 
-**๏ sᴛɪᴄᴋᴇʀ ɪᴅ **➠ `{st_in.file_id}`\n
-**๏ sᴛɪᴄᴋᴇʀ ᴜɴɪǫᴜᴇ ɪᴅ **➠ `{st_in.file_unique_id}`
-""")
+**● sᴛɪᴄᴋᴇʀ ɪᴅ **➥ `{st_in.file_id}`\n
+**● sᴛɪᴄᴋᴇʀ ᴜɴɪǫᴜᴇ ɪᴅ **➥ `{st_in.file_unique_id}` """, reply_markup=InlineKeyboardMarkup(EVAA),))
 
 
 #####
