@@ -49,7 +49,7 @@ async def ctest(_, message):
     try:
      #  is_selected = await get_couple(cid, today)
      #  if not is_selected:
-         msg = await message.reply_text("✦ ɢᴇɴᴇʀᴀᴛɪɴɢ ᴄᴏᴜᴘʟᴇs ɪᴍᴀɢᴇ...")
+         msg = await message.reply_text("💥")
          #GET LIST OF USERS
          list_of_users = []
 
@@ -106,11 +106,13 @@ async def ctest(_, message):
          img.save(f'test_{cid}.png')
     
          TXT = f"""
-**❖ ᴛᴏᴅᴀʏ's ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ ⏤͟͟͞͞★
+**ㅤ   ◦•●◉✿ ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ  ✿◉●•◦
+▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▰
 
  {N1} + {N2} = 💌
 
 ❖ ɴᴇxᴛ ᴄᴏᴜᴘʟᴇ sᴇʟᴇᴄᴛᴇᴅ ᴏɴ {tomorrow} !**
+▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▰
 """
     
          await message.reply_photo(f"test_{cid}.png", caption=TXT, reply_markup=InlineKeyboardMarkup(POLICE),
