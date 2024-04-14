@@ -29,6 +29,14 @@ SOFTWARE.
 from pyrogram import Client, filters
 import random
 from DAXXMUSIC import app
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
+EVAA = [
+    [
+        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/nykaaxbot?startgroup=true"),
+    ],
+]
+
 
 # Constants
 VALID_PREFIXES = [4, 5, 6,3]  # VISA starts with 4, MasterCard with 5, Discover with 6
@@ -60,4 +68,5 @@ def generate(client, message):
     prefix = random.choice(VALID_PREFIXES)
     length = 6  # Standard credit card length
     card_number = generate_test_card_number(prefix, length)
-    message.reply_text(f"✦ ʙɪɴ sᴜᴄᴄᴇssғᴜʟʟʏ ɢᴇɴʀᴀᴛᴇᴅ.\n\n" f"✦ ʜᴇʀᴇ ɪs ʏᴏᴜʀ ʙɪɴ ➠ `{card_number}`")
+    message.reply_text(f"❖ ʙɪɴ sᴜᴄᴄᴇssғᴜʟʟʏ ɢᴇɴᴇʀᴀᴛᴇᴅ\n\n" f"● ʜᴇʀᴇ ɪs ʏᴏᴜʀ ʙɪɴ ➥ `{card_number}` ", reply_markup=InlineKeyboardMarkup(EVAA),)
+  
