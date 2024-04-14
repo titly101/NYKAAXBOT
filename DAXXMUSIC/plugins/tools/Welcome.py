@@ -121,7 +121,7 @@ async def greet_group(_, member: ChatMemberUpdated):
             photo=welcomeimg,
             caption= f"""
 **
-⁣❅────✦ ᴡᴇʟᴄᴏᴍᴇ ✦────❅
+━━━•❅•°sᴏɴɢ ɪɴғᴏ°•❅•━━━⁣
 
 ๏ ɴᴀᴍᴇ ➠  {user.mention}
 ๏ ᴜsᴇʀɴᴀᴍᴇ ➠ @{user.username}
