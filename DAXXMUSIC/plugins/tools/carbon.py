@@ -2,7 +2,13 @@ import aiohttp
 from io import BytesIO
 from DAXXMUSIC import app
 from pyrogram import filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
+EVAA = [
+    [
+        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/nykaaxbot?startgroup=true"),
+    ],
+]
 
 
 async def make_carbon(code):
@@ -26,7 +32,8 @@ async def _carbon(client, message):
     text = await message.reply("Processing...")
     carbon = await make_carbon(replied.text or replied.caption)
     await text.edit("**ᴜᴘʟᴏᴀᴅɪɴɢ...**")
-    await message.reply_photo(carbon)
+    await message.reply_photo(carbon), caption=f"❍ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➠ ๛ᴀ ᴠ ɪ s ʜ ᴀ ♡゙", reply_markup=InlineKeyboardMarkup(EVAA),
+    )
     await text.delete()
     carbon.close()
 
