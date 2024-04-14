@@ -19,7 +19,7 @@ async def blackpink(_, message):
 @app.on_message(filters.command(["github", "git"]))
 async def github(_, message):
     if len(message.command) != 2:
-        await message.reply_text("/git NYKAAXBOT")
+        await message.reply_text("❖ ➥ `/git tinaarobot`")
         return
 
     username = message.text.split(None, 1)[1]
@@ -45,20 +45,20 @@ async def github(_, message):
                 followers = result['followers']
                 following = result['following']
 
-                caption = f"""ㅤㅤ✦ ɢɪᴛʜᴜʙ ɪɴғᴏ ᴏғ {name} ✦
+                caption = f"""ㅤㅤ❖ ɢɪᴛʜᴜʙ ɪɴғᴏ ᴏғ {name} ❖
                  
-๏ ᴜsᴇʀɴᴀᴍᴇ ➠ {username}
-๏ ʙɪᴏ ➠ {bio}
-๏ ʟɪɴᴋ ➠ [Here]({url})
-๏ ᴄᴏᴍᴩᴀɴʏ ➠ {company}
-๏ ᴄʀᴇᴀᴛᴇᴅ ᴏɴ ➠ {created_at}
-๏ ʀᴇᴩᴏsɪᴛᴏʀɪᴇs ➠ {repositories}
-๏ ʙʟᴏɢ ➠ {blog}
-๏ ʟᴏᴄᴀᴛɪᴏɴ ➠ {location}
-๏ ғᴏʟʟᴏᴡᴇʀs ➠ {followers}
-๏ ғᴏʟʟᴏᴡɪɴɢ ➠ {following}
+● ᴜsᴇʀɴᴀᴍᴇ ➥ {username}
+● ʙɪᴏ ➥ {bio}
+● ʟɪɴᴋ ➥ [Here]({url})
+● ᴄᴏᴍᴩᴀɴʏ ➥ {company}
+● ᴄʀᴇᴀᴛᴇᴅ ᴏɴ ➥ {created_at}
+● ʀᴇᴩᴏsɪᴛᴏʀɪᴇs ➥ {repositories}
+● ʙʟᴏɢ ➥ {blog}
+● ʟᴏᴄᴀᴛɪᴏɴ ➥ {location}
+● ғᴏʟʟᴏᴡᴇʀs ➥ {followers}
+● ғᴏʟʟᴏᴡɪɴɢ ➥ {following}
 
-๏ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➠ [๛ɴ ʏ ᴋ ᴀ ᴀ࿐](https://t.me/nykaaxbot)"""
+❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ [๛ɴ ʏ ᴋ ᴀ ᴀ࿐](https://t.me/nykaaxbot)"""
 
             except Exception as e:
                 print(str(e))
