@@ -5,7 +5,13 @@ from pyrogram.errors import PeerIdInvalid
 from pyrogram.types import Message, User
 
 from DAXXMUSIC import app
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
+EVAA = [
+    [
+        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/nykaaxbot?startgroup=true"),
+    ],
+]
 
 def ReplyCheck(message: Message):
     reply_id = None
@@ -82,7 +88,7 @@ async def whois(client, message):
             last_name=user.last_name if user.last_name else "",
             username=user.username if user.username else "",
             last_online=LastOnline(user),
-            bio=desc if desc else "`ᴇᴍᴩᴛʏ.`",
+            bio=desc if desc else "`ᴇᴍᴩᴛʏ.`",reply_markup=InlineKeyboardMarkup(EVAA),
         ),
         disable_web_page_preview=True,
     )
