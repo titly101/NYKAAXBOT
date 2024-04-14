@@ -106,11 +106,11 @@ async def ctest(_, message):
          img.save(f'test_{cid}.png')
     
          TXT = f"""
-**❅ ᴛᴏᴅᴀʏ's ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ ⏤͟͟͞͞★
+**❖ ᴛᴏᴅᴀʏ's ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ ⏤͟͟͞͞★
 
  {N1} + {N2} = 💌
 
-❅ ɴᴇxᴛ ᴄᴏᴜᴘʟᴇ sᴇʟᴇᴄᴛᴇᴅ ᴏɴ {tomorrow} !**
+❖ ɴᴇxᴛ ᴄᴏᴜᴘʟᴇ sᴇʟᴇᴄᴛᴇᴅ ᴏɴ {tomorrow} !**
 """
     
          await message.reply_photo(f"test_{cid}.png", caption=TXT, reply_markup=InlineKeyboardMarkup(POLICE),
