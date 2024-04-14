@@ -1,6 +1,15 @@
 from pyrogram import Client, filters
 import requests
 from DAXXMUSIC import app
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
+
+EVAA = [
+    [
+        InlineKeyboardButton(text="ᴀᴅᴅ ᴍᴇ ʙᴀʙʏ", url=f"https://t.me/nykaaxbot?startgroup=true"),
+    ],
+]
+
 
 waifu_api_url = 'https://api.waifu.im/search'
 
@@ -28,7 +37,7 @@ def waifu_command(client, message):
         if waifu_data and 'images' in waifu_data:
             first_image = waifu_data['images'][0]
             image_url = first_image['url']
-            message.reply_photo(image_url)
+            message.reply_photo(image_url), caption=f"❖ ᴡᴀɪғᴜ ɪᴍɢ ʙʏ ➥ ๛ɴ ʏ ᴋ ᴀ ᴀ ࿐", reply_markup=InlineKeyboardMarkup(EVAA),)
         else:
             message.reply_text("No waifu found with the specified tags.")
 
