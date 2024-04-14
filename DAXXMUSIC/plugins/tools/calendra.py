@@ -5,6 +5,14 @@ import aiohttp
 import calendar
 from DAXXMUSIC import app
 
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
+EVAA = [
+    [
+        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/the_friendz"),
+    ],
+]
+
 async def make_carbon(code):
     url = "https://carbonara.solopov.dev/api/cook"
 
@@ -34,10 +42,10 @@ async def send_calendar(_, message):
         try:
             year = int(command_parts[1])
         except ValueError:
-            await message.reply("Invalid year format. Please use /calendar <year>")
+            await message.reply("✦ ɪɴᴠᴀʟɪᴅ ʏᴇᴀʀ ғᴏʀᴍᴀᴛ. ᴘʟᴇᴀsᴇ ᴜsᴇ /calendar <year>")
             return
     else:
-        await message.reply("Please provide a valid year after /calendar command.")
+        await message.reply("✦ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ᴠᴀʟɪᴅ ʏᴇᴀʀ ᴀғᴛᴇʀ /calendar ᴄᴏᴍᴍᴀɴᴅ.")
         return
 
     # Generate the calendar for the specified year
@@ -48,4 +56,5 @@ async def send_calendar(_, message):
     carbon_image = await make_carbon(full_year_calendar)
 
     # Send the image as a reply to the user
-    await app.send_photo(message.chat.id, carbon_image, caption=f"✦ ᴄᴀʟᴇɴᴅᴀʀ ᴏғ ᴛʜᴇ ʏᴇᴀʀ {year} ✦\n\n๏ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➠ ๛ɴ ʏ ᴋ ᴀ ᴀ࿐")
+    await app.send_photo(message.chat.id, carbon_image, caption=f"✦ ʜᴇʀᴇ ɪs ʏᴏᴜʀ {year} ᴄᴀʟᴇɴᴅᴀʀ.", reply_markup=InlineKeyboardMarkup(EVAA),)
+           
