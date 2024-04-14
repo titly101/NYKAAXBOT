@@ -32,7 +32,7 @@ infotext = (
     " ● ʟᴀsᴛ ɴᴀᴍᴇ ➥ `{last_name}`\n"
     " ● ᴜsᴇʀɴᴀᴍᴇ ➥ `@{username}`\n"
     " ● ʟᴀsᴛ sᴇᴇɴ ➥ `{last_online}`\n\n"
-    ” ❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ ๛ɴ ʏ ᴋ ᴀ ᴀ࿐”
+    " ❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ ๛ɴ ʏ ᴋ ᴀ ᴀ ࿐"
 )
 
 
@@ -88,9 +88,7 @@ async def whois(client, message):
             last_name=user.last_name if user.last_name else "",
             username=user.username if user.username else "",
             last_online=LastOnline(user),
-            bio=desc if desc else "`ᴇᴍᴩᴛʏ.`",reply_markup=InlineKeyboardMarkup(EVAA),
-        ),
-        disable_web_page_preview=True,
+            bio=desc if desc else "`ᴇᴍᴩᴛʏ.`"), reply_markup=InlineKeyboardMarkup(EVAA), disable_web_page_preview=True,
     )
 
 
