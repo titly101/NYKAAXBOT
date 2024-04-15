@@ -10,7 +10,7 @@ from pyrogram.errors import UserNotParticipant
 SPAM_CHATS = []
 
 
-@app.on_message(filters.command(["utag", "all"]) & filters.group & admin_filter)
+@app.on_message(filters.command(["utag"]) & filters.group & admin_filter)
 async def tag_all_users(_,message): 
     replied = message.reply_to_message  
     try:
@@ -67,7 +67,7 @@ async def tag_all_users(_,message):
         except Exception:
             pass        
            
-@app.on_message(filters.command("cancle", "ustop", "alloff") & ~filters.private)
+@app.on_message(filters.command("cancle") & ~filters.private)
 async def cancelcmd(_, message):
     chat_id = message.chat.id
     if chat_id in SPAM_CHATS:
