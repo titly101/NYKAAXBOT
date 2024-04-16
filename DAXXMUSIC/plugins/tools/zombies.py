@@ -94,28 +94,28 @@ async def admins(client, message):
     try:
       owner = ownerList[0]
       if owner.username == None:
-        text2 += f"❖ ᴏᴡɴᴇʀ\n└ {owner.mention}\n\n👮🏻 ᴀᴅᴍɪɴs\n"
+        text2 += f"❖ ᴏᴡɴᴇʀ\n● {owner.mention}\n\n● ᴀᴅᴍɪɴs\n"
       else:
-        text2 += f"❖ ᴏᴡɴᴇʀ\n└ @{owner.username}\n\n👮🏻 ᴀᴅᴍɪɴs\n"
+        text2 += f"❖ ᴏᴡɴᴇʀ\n● @{owner.username}\n\n● ᴀᴅᴍɪɴs\n"
     except:
-      text2 += f"❖ ᴏᴡɴᴇʀ\n└ <i>Hidden</i>\n\n👮🏻 ᴀᴅᴍɪɴs\n"
+      text2 += f"❖ ᴏᴡɴᴇʀ\n● <i>Hidden</i>\n\n● ᴀᴅᴍɪɴs\n"
     if len(adminList) == 0:
-      text2 += "└ <i>ᴀᴅᴍɪɴs ᴀʀᴇ ʜɪᴅᴅᴇɴ</i>"  
+      text2 += "● <i>ᴀᴅᴍɪɴs ᴀʀᴇ ʜɪᴅᴅᴇɴ</i>"  
       await app.send_message(message.chat.id, text2)   
     else:  
       while len(adminList) > 1:
         admin = adminList.pop(0)
         if admin.username == None:
-          text2 += f"├ {admin.mention}\n"
+          text2 += f"● {admin.mention}\n"
         else:
-          text2 += f"├ @{admin.username}\n"    
+          text2 += f"● @{admin.username}\n"    
       else:    
         admin = adminList.pop(0)
         if admin.username == None:
-          text2 += f"└ {admin.mention}\n\n"
+          text2 += f"● {admin.mention}\n\n"
         else:
-          text2 += f"└ @{admin.username}\n\n"
-      text2 += f"❖ | **ᴛᴏᴛᴀʟ ɴᴜᴍʙᴇʀ ᴏғ ᴀᴅᴍɪɴs** ⏤͟͟͞͞★ {lenAdminList}"  
+          text2 += f"● @{admin.username}\n\n"
+      text2 += f"❖ ᴛᴏᴛᴀʟ ɴᴜᴍʙᴇʀ ᴏғ ᴀᴅᴍɪɴs ➥ {lenAdminList}"  
       await app.send_message(message.chat.id, text2)           
   except FloodWait as e:
     await asyncio.sleep(e.value)       
@@ -129,14 +129,14 @@ async def bots(client, message):
     async for bot in app.get_chat_members(message.chat.id, filter=enums.ChatMembersFilter.BOTS):
       botList.append(bot.user)
     lenBotList = len(botList) 
-    text3  = f"**❖ ʙᴏᴛ ʟɪsᴛ ➥ {message.chat.title}**\n\n❖ 🤖 ʙᴏᴛs\n"
+    text3  = f"**❖ ʙᴏᴛ ʟɪsᴛ ➥ {message.chat.title}**\n\n"
     while len(botList) > 1:
       bot = botList.pop(0)
-      text3 += f"├ @{bot.username}\n"    
+      text3 += f"● @{bot.username}\n"    
     else:    
       bot = botList.pop(0)
-      text3 += f"└ @{bot.username}\n\n"
-      text3 += f"❖ | *ᴛᴏᴛᴀʟ ɴᴜᴍʙᴇʀ ᴏғ ʙᴏᴛs** ➥ {lenBotList}"  
+      text3 += f"● @{bot.username}\n\n"
+      text3 += f"❖ ᴛᴏᴛᴀʟ ɴᴜᴍʙᴇʀ ᴏғ ʙᴏᴛs ➥ {lenBotList}"  
       await app.send_message(message.chat.id, text3)
   except FloodWait as e:
     await asyncio.sleep(e.value)
