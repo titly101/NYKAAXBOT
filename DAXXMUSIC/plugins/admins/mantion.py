@@ -1,30 +1,17 @@
 import asyncio
 from pyrogram.enums import ChatType, ChatMemberStatus
 from DAXXMUSIC import app
-from pyrogram import filters, client 
+from pyrogram import filters
 from DAXXMUSIC.utils.daxx_ban import admin_filter
-from pyrogram.errors import UserNotParticipant
 
 
 
 SPAM_CHATS = []
 
 
-@app.on_message(filters.command(["utag"]) & filters.group & admin_filter)
+@app.on_message(filters.command(["utag", "all"]) & filters.group & admin_filter)
 async def tag_all_users(_,message): 
     replied = message.reply_to_message  
-    try:
-        participant = await client.get_chat_member(chat_id, message.from_user.id)
-    except UserNotParticipant:
-        is_admin = False
-    else:
-        if participant.status in (
-            ChatMemberStatus.ADMINISTRATOR,
-            ChatMemberStatus.OWNER
-        ):
-            is_admin = True
-    if not is_admin:
-        return await message.reply("๏ ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ ʙᴀʙʏ, ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴅᴏ ᴛʜɪs. ")
     if len(message.command) < 2 and not replied:
         await message.reply_text("**✦ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴍᴇssᴀɢᴇ ᴏʀ ɢɪᴠᴇ sᴏᴍᴇ ᴛᴇxᴛ ᴛᴏ ᴛᴀɢ ᴀʟʟ**") 
         return                  
@@ -67,7 +54,7 @@ async def tag_all_users(_,message):
         except Exception:
             pass        
            
-@app.on_message(filters.command("cancle") & ~filters.private)
+@app.on_message(filters.command("cancle", "ustop", "alloff") & ~filters.private)
 async def cancelcmd(_, message):
     chat_id = message.chat.id
     if chat_id in SPAM_CHATS:
