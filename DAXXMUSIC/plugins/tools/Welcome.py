@@ -127,7 +127,6 @@ async def greet_group(_, member: ChatMemberUpdated):
 ● ɴᴀᴍᴇ ➥  {user.mention}
 ● ᴜsᴇʀɴᴀᴍᴇ ➥  @{user.username}
 ● ᴜsᴇʀ ɪᴅ ➥  {user.id}
-
 ❖ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ➥ [๛ɴ ʏ ᴋ ᴀ ᴀ ࿐](https://t.me/nykaaxbot)**
 
 ▰▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱▰
