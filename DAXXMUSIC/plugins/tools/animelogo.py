@@ -5,8 +5,7 @@ import pyrogram, asyncio, random, time
 from pyrogram.errors import FloodWait
 import requests
 from DAXXMUSIC import app
-from pyrogram.types import *
-
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 #######
 
